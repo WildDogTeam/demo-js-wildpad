@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- See http://www.wildpad.io/docs/ for detailed embedding docs. -->
+<html>
+
+<head>
+  <meta charset="utf-8" />
+    <!-- Wilddog -->
+  <script src="https://cdn.wilddog.com/js/client/current/wilddog.js"></script>
+
+  <!-- CodeMirror -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+
+   <!-- Wildpad -->
+  <link rel="stylesheet" href="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.css" />
+  <script src="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.js"></script>
+
+  <!-- Include example userlist script / CSS.
+       Can be downloaded from: https://github.com/wilddog/wildpad/tree/master/examples/ -->
+  <script src="wildpad-userlist.js"></script>
+  <link rel="stylesheet" href="wildpad-userlist.css" />
+
+  <style>
+    html { height: 100%; }
+    body { margin: 0; height: 100%; }
+    /* Height / width / positioning can be customized for your use case.
+       For demo purposes, we make the user list 175px and wildpad fill the rest of the page. */
+    #userlist {
+      position: absolute; left: 0; top: 0; bottom: 0; height: auto;
+      width: 175px;
+    }
+    #wildpad {
+      position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="userlist"></div>
+  <div id="wildpad"></div>
+
+  <script>
+    function init() {
+      //// Initialize Wilddog.
+      var wildpadRef = getExampleRef();
+      // TODO: Replace above line with:
+      // var wildpadRef = new Wilddog('<YOUR WILDDOG URL>');
+
+      //// Create CodeMirror (with lineWrapping on).
+      var codeMirror = CodeMirror(document.getElementById('wildpad'), { lineWrapping: true });
+
+      // Create a random ID to use as our user ID (we must give this to wildpad and WildpadUserList).
+      var userId = Math.floor(Math.random() * 9999999999).toString();
+
+      //// Create Wildpad (with rich text features and our desired userId).
+      var wildpad = Wildpad.fromCodeMirror(wildpadRef, codeMirror,
+          { richTextToolbar: true, richTextShortcuts: true, userId: userId});
+
+      //// Create WildpadUserList (with our desired userId).
+      var wildpadUserList = WildpadUserList.fromDiv(wildpadRef.child('users'),
+          document.getElementById('userlist'), userId);
+
+      //// Initialize contents.
+      wildpad.on('ready', function() {
+        if (wildpad.isHistoryEmpty()) {
+          wildpad.setText('Check out the user list to the left!');
+        }
+      });
+    }
+
+    // Helper to get hash from end of URL or generate a random one.
+    function getExampleRef() {
+      var ref = new Wilddog('https://myofffice1.wilddogio.com');
+      var hash = window.location.hash.replace(/#/g, '');
+      if (hash) {
+        ref = ref.child(hash);
+      } else {
+        ref = ref.push(); // generate unique location.
+        window.location = window.location + '#' + ref.key(); // add it as a hash to the URL.
+      }
+      if (typeof console !== 'undefined')
+        console.log('Wilddog data: ', ref.toString());
+      return ref;
+    }
+
+    init();
+  </script>
+</body>
+</html>

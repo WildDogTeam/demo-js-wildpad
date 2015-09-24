@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!-- Wilddog -->
+  <script src="https://cdn.wilddog.com/js/client/current/wilddog.js"></script>
+
+  <!-- ACE and its JavaScript mode and theme files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/theme-textmate.js"></script>
+
+  <!-- Wildpad -->
+  <link rel="stylesheet" href="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.css" />
+  <script src="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.js"></script>
+
+  <style>
+    html { height: 100%; }
+    body { margin: 0; height: 100%; position: relative; }
+    /* Height / width / positioning can be customized for your use case.
+       For demo purposes, we make wildpad fill the entire browser. */
+    #wildpad-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wildpad-container"></div>
+
+  <script>
+    function init() {
+      //// Initialize Wilddog.
+      var wildpadRef = getExampleRef();
+      // TODO: Replace above line with:
+      // var wildpadRef = new Wilddog('<YOUR WILDDOG URL>');
+
+      //// Create ACE
+      var editor = ace.edit("wildpad-container");
+      editor.setTheme("ace/theme/textmate");
+      var session = editor.getSession();
+      session.setUseWrapMode(true);
+      session.setUseWorker(false);
+      session.setMode("ace/mode/javascript");
+
+      //// Create Wildpad.
+      var wildpad = Wildpad.fromACE(wildpadRef, editor, {
+        defaultText: '// JavaScript Editing with Wildpad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
+      });
+    }
+
+    // Helper to get hash from end of URL or generate a random one.
+    function getExampleRef() {
+      var ref = new Wilddog('https://myoffice1.wilddogio.com');
+      var hash = window.location.hash.replace(/#/g, '');
+      if (hash) {
+        ref = ref.child(hash);
+      } else {
+        ref = ref.push(); // generate unique location.
+        window.location = window.location + '#' + ref.key(); // add it as a hash to the URL.
+      }
+      if (typeof console !== 'undefined')
+        console.log('Wilddog data: ', ref.toString());
+      return ref;
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
