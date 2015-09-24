@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Wildpad 示例</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+  <link rel="stylesheet" href="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.css" />
+  <link rel="stylesheet" href="../examples/wildpad-userlist.css" />
+  <link rel="stylesheet" href="demo.css" />
+  <link href="../images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+<div id="fb-root"></div>
+  <div id="top">
+    <div id="top-bg-tile">
+      <div id="top-content">
+        <div id="wildpad-demo"></div>
+        <a id="my-pads" class="sprite-btn" onclick="displayPads()"></a>
+        <a onclick="displayPads()" id="my-pads" class="sprite-btn"></a>
+        <a href="./" id="create-pad" class="sprite-btn"></a>
+        <div id="my-pads-list">
+        </div>
+        <div id="wildpad-container">
+          <div id="wildpad-userlist"></div>
+          <div id="wildpad"></div>
+        </div>
+        <div id="share-box">
+          <div id="share-with-friends">Edit with Friends</div>
+          <div id="share-features">
+            <table>
+              <tr>
+                <td>
+                  <input type="text" readonly="readonly" id="url" />
+                </td>
+                <td>
+                </td>
+                <td>
+                      <!-- JiaThis Button BEGIN -->
+                        <div class="jiathis_style_32x32">
+                          <a class="jiathis_button_tsina"></a>
+                          <a class="jiathis_button_tqq"></a>
+                          <a class="jiathis_button_renren"></a>
+                        </div>
+                        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2061391" charset="utf-8"></script>
+                        <!-- JiaThis Button END -->
+                </td>
+              </tr>
+            </table>
+          </div>
+            
+
+        </div>
+        <div id="description">
+          <div id="learn-more">开始协作文本编辑器,<a href="../docs">更多&gt;</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <script src='https://cdn.wilddog.com/js/client/current/wilddog.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+  <script type="text/javascript" src="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.js"></script>
+  <script src="../examples/wildpad-userlist.js"></script>
+   <script src="../js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="demo.js"></script>
+
+<script type="text/javascript">
+    function displayPads() {
+      $('#my-pads-list').toggle();
+    }
+</script>
+<script src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
+<script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
+</body>
+</html>

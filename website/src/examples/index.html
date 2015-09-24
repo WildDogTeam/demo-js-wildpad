@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Wildpad - 示例</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" />
+  <link href="../css/prettify.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+</head>
+
+<body class="examples-page">
+  <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad" target="_blank">
+    <img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1;" src="../images/fork_on_github.png" alt="Fork me on GitHub">
+  </a>
+  <div id="top">
+    <div id="top-shadow"></div>
+    <div id="top-bg-tile">
+      <div id="fork-on-github"></div>
+      <div id="top-content">
+        <div id="header-links" class="clearfix">
+          <a href="../">首页</a>
+          <a href="#" class="selected">示例</a>
+          <a href="../docs/">文档</a>
+          <a href="../demo" target="_blank" class="private-wildpad"></a>
+        </div>
+        <a href="../">
+          <div id="logo-small"></div>
+        </a>
+        <div id="page-title">示例</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="examples-container">
+    <div class="row">
+    <div class="span3 sidebar">
+      <ul class="nav nav-list sidenav" data-spy="affix" data-offset-top="150">
+        <li><a href="#richtext" id="richtext-link"><i class="icon-chevron-right"></i> 富文本</a></li>
+        <li><a href="#code" id="code-link"><i class="icon-chevron-right"></i> CodeMirror编辑器</a></li>
+        <li><a href="#ace" id="ace-link"><i class="icon-chevron-right"></i> Ace编辑器</a></li>
+        <li><a href="#userlist" id="userlist-link"><i class="icon-chevron-right"></i> 用户列表</a></li>
+      </ul>
+    </div>
+    <div class="span9">
+      <section id="intro">
+        <div class="uses-title example-title">首例</div>
+        <p>文档中示例放在github上:</p>
+        <pre>&gt; git clone git@code.wilddog.cn:wddemo/demo-js-wildpad.git
+&gt; open demo-js-wildpad/examples/index.html</pre>
+        <p>你也可以点击"View Source on Github"按钮查看示例源码。</p>
+      </section>
+
+      <section id="richtext">
+        <div class="example-title">1. 富文本
+          <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad/blob/master/examples/richtext.html" class="example-view-source" target="_blank"><img src="../images/view-source.png"></a>
+        </div>
+        <p>使用Wildpad的富文本功能进行协同博客，做笔记，校对等等。</p>
+        <div class="example-container"></div>
+      </section>
+
+      <section id="code">
+        <div class="example-title">2. CodeMirror编辑器
+          <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad/blob/master/examples/code.html" class="example-view-source" target="_blank"><img src="../images/view-source.png"></a>
+        </div>
+        <p>结合CodeMirror代码编辑功能，Wildpad很适合结对编程！</p>
+        <div class="example-container"></div>
+      </section>
+
+      <section id="ace">
+        <div class="example-title">3. Ace编辑器
+          <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad/blob/master/examples/ace.html" class="example-view-source" target="_blank"><img src="../images/view-source.png"></a>
+        </div>
+        <p>你也可以用Ace进行代码编辑。</p>
+        <div class="example-container"></div>
+      </section>
+
+      <section id="userlist">
+        <div class="example-title">3. 用户列表
+          <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad/blob/master/examples/userlist.html" class="example-view-source" target="_blank"><img src="../images/view-source.png"></a>
+        </div>
+        <p>你可以很容易的添加用户的在线状态和其它特性。</p>
+        <div class="example-container"></div>
+      </section>
+        <div class="build-something">
+           联系我们, 发送邮件到 <a href="mailto:support@wilddog.com?subject=[Wildpad]">support@wilddog.com!</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div id="footer-wrap">
+    <div id="footer">
+      <div id="footer-links">
+        <a href="../index.html">首页</a>
+        <a href="../docs/">文档</a>
+        <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad" target="_blank">GitHub Project</a>
+      </div>
+      <div id="powered-by-wilddog">
+        <a href="https://www.wilddog.com/" target="_blank"><img
+          src="../images/powered-by-wilddog.svg"></a>
+      </div>
+    </div>
+  </div>
+  <script src="../js/jquery-1.9.1.min.js"></script>
+  <script src="../js/bootstrap-affix.js"></script>
+
+  <script src='https://cdn.wilddog.com/js/client/current/wilddog.js'></script>
+  <!-- CodeMirror -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/mode/javascript/javascript.js"></script>
+
+  <script type="text/javascript" src="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.js"></script>
+
+  <!-- ACE -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+  
+  <link rel="stylesheet" href="wildpad-userlist.css" />
+  <script src="wildpad-userlist.js"></script>
+  
+  <script src="../js/examples.js"></script>
+  <script src="../js/prettify.js"></script>
+</body>
+</html>

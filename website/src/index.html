@@ -1,0 +1,141 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <title>Wildpad - 开源代码协作和文本编辑</title>
+  <meta name="description" content="An open source collaborative code and text editor. Share documents and see changes occur in real-time." />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+  <link rel="stylesheet" href="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.css" />
+  <link rel="stylesheet" href="examples/wildpad-userlist.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/borland.css" />
+  <link href="images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body class="home-page">
+  <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad" target="_blank">
+    <img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1;" src="images/fork_on_github.png" alt="Fork me on GitHub">
+  </a>
+  <div id="top">
+    <div id="top-shadow"></div>
+    <div id="top-bg-tile">
+      <div id="top-content">
+        <div id="header-links" class="clearfix">
+          <a href="javascript:void(0);" class="selected">首页</a>
+          <a href="examples/">示例</a>
+          <a href="docs/">文档</a>
+          <a  href="demo/" target="_blank" class="private-wildpad"></a>
+        </div>
+        <div id="home-title-container" class="clearfix">
+            <img src="images/wildpad_logo.png" />
+        </div>
+        <div id="home-subtitle">开源代码协作和文本编辑</div>
+        <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad" target="_blank" id="home-download-on-github"><img src="images/download.png"></a>
+        <div id="wildpad-container">
+          <div id="wildpad-userlist" class="wildpad-userlist"></div>
+          <div id="wildpad"></div>
+        </div>
+
+        <div id="code-container">
+          <div id="code-heading">
+            给你的应用增加一个Wildpad<a href="http://code.wilddog.cn/wddemo/demo-js-wildpad/blob/master/examples/richtext-simple.html">代码</a>:
+
+          <pre><span class="kd">var</span> <span class="nx">wildpadDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;wildpad&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">wildpadRef</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Wilddog</span><span class="p">(</span><span class="s1">&#39;&lt;wilddog url...&gt;&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">codeMirror</span> <span class="o">=</span> <span class="nx">CodeMirror</span><span class="p">(</span><span class="nx">wildpadDiv</span><span class="p">,</span> <span class="p">{</span> <span class="nx">lineWrapping</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">wildpad</span> <span class="o">=</span> <span class="nx">Wildpad</span><span class="p">.</span><span class="nx">fromCodeMirror</span><span class="p">(</span><span class="nx">wildpadRef</span><span class="p">,</span> <span class="nx">codeMirror</span><span class="p">,</span>
+    <span class="p">{</span> <span class="nx">richTextShortcuts</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">richTextToolbar</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="bottom">
+    <div id="bottom-container">
+      <div class="social-container clearfix">
+        <ul class="social-buttons">
+          <li>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user=WildDogTeam&repo=demo-js-wildpad&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+          </li>
+          <li>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user=WildDogTeam&repo=demo-js-wildpad&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+          </li>
+        </ul>
+      </div>
+        <div class="bottom-title">无后端实时协作</div>
+      <div class="bottom-content separator">
+        <div id="faq" class="clearfix">
+          <div class="faq-col">
+            <div class="faq-question">
+              <div class="faq-title">Wildpad是什么?</div>
+              <span>Wildpad是一个开源的实时协作编辑器。它提供了真正的协同编辑，配有智能化的操作变换为基础的合并和冲突解决。有些功能包括：
+                <ul>
+                  <li>光标位置同步</li>
+                  <li>撤销和重做</li>
+                  <li>文本高亮</li>
+                  <li>用户归属</li>
+                  <li>存在检测</li>
+                  <li>版本检测</li>
+                </ul>
+              </span>
+            </div>
+            <div class="faq-question">
+              <div class="faq-title">Wildpad能做什么?</div>
+              <span>你可以开发任何需要协同编辑的应用，Wildpad支持富文本，你可以很容易的拓展它。</span>
+            </div>
+            <div class="faq-question">
+              <div class="faq-title">Wildpad和其它的文本编辑器有什么区别?</div>
+              <span>大多数的协同编辑器需要服务端的支持，如果你不懂服务端，这是不切实际的。Wildpad无需依赖服务端，取而代之的是使用<a href="https://www.wilddog.com/" target="_blank">Wilddog</a>
+		实时数据库，这样意味着你可以将Wildpad嵌入到任何应用，甚至静态网站，你仅仅只需要引入JavaScript文件。
+		</span>
+            </div>
+          </div>
+          <div class="faq-col">
+            <div class="faq-question">
+            <div class="faq-title">Wildpad使用了哪些技术?</div>
+              <span>Wildpad可以使用 <a href="http://codemirror.net" target="_blank">CodeMirror</a> 或<a href="http://ace.c9.io" target="_blank"> Ace</a> 做文档编辑, 它的业务业务转换代码使用了 <a href="https://github.com/Operational-Transformation/ot.js/" target="_blank">ot.js</a>. 在这种场景下, Wildpad使用<a href="https://www.wilddog.com/" target="_blank">Wilddog</a>
+              作为云端数据存储和同步.</span>
+            </div>
+            <div class="faq-question">
+              <div class="faq-title">Wildpad支持哪些浏览器?</div>
+              <span>所有现代浏览器:
+                <ul>
+                  <li>Chrome</li>
+                  <li>Safari</li>
+                  <li>Opera 11+</li>
+                  <li>IE8+</li>
+                  <li>Firefox 3.6+</li>
+                </ul>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-links">
+        <a href="examples/">示例</a>
+        <a href="docs/">文档</a>
+        <a href="http://code.wilddog.cn/wddemo/demo-js-wildpad" target="_blank">GitHub Project</a>
+      </div>
+       <div id="powered-by-wilddog">
+        <a href="www.wilddog.com" target="_blank"><img src="images/powered-by-wilddog.svg"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <div id="fb-root"></div>
+  <script src="js/jquery-1.9.1.min.js"></script>
+
+  <script src='https://cdn.wilddog.com/js/client/current/wilddog.js'></script>
+   <!-- ACE -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+  <script type="text/javascript" src="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.js"></script>
+  <script src="examples/wildpad-userlist.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

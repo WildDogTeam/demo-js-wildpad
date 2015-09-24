@@ -1,8 +1,6 @@
 var WildpadUserList = (function() {
-  function WildpadUserList(ref, place, userId, displayName) {
-    if (!(this instanceof WildpadUserList)) {
-      return new WildpadUserList(ref, place, userId, displayName);
-    }
+  function WildpadUserList(ref, place, userId) {
+    if (!(this instanceof WildpadUserList)) { return new WildpadUserList(ref, place, userId); }
 
     this.ref_ = ref;
     this.userId_ = userId;
@@ -10,8 +8,7 @@ var WildpadUserList = (function() {
     this.wilddogCallbacks_ = [];
 
     var self = this;
-    this.hasName_ = !!displayName;
-    this.displayName_ = displayName || 'Guest ' + Math.floor(Math.random() * 1000);
+    this.displayName_ = 'Guest ' + Math.floor(Math.random() * 1000);
     this.wilddogOn_(ref.root().child('.info/connected'), 'value', function(s) {
       if (s.val() === true && self.displayName_) {
         var nameRef = ref.child(self.userId_).child('name');
@@ -63,7 +60,7 @@ var WildpadUserList = (function() {
     var colorDiv = elt('div', null, { 'class': 'wildpad-userlist-color-indicator' });
     this.wilddogOn_(myUserRef.child('color'), 'value', function(colorSnapshot) {
       var color = colorSnapshot.val();
-      if (isValidColor(color)) {
+      if (typeof color === 'string' && color.match(/^#[a-fA-F0-9]{3,6}$/)) {
         colorDiv.style.backgroundColor = color;
       }
     });
@@ -72,25 +69,20 @@ var WildpadUserList = (function() {
     nameInput.value = this.displayName_;
 
     var nameHint = elt('div', 'ENTER YOUR NAME', { 'class': 'wildpad-userlist-name-hint'} );
-    if (this.hasName_) nameHint.style.display = 'none';
 
     // Update Wilddog when name changes.
-    var self = this;
     on(nameInput, 'change', function(e) {
       var name = nameInput.value || "Guest " + Math.floor(Math.random() * 1000);
       myUserRef.child('name').onDisconnect().remove();
       myUserRef.child('name').set(name);
       nameHint.style.display = 'none';
       nameInput.blur();
-      self.displayName_ = name;
       stopEvent(e);
     });
 
     var nameDiv = elt('div', [nameInput, nameHint]);
 
-    return elt('div', [ colorDiv, nameDiv ], {
-      'class': 'wildpad-userlist-user ' + 'wildpad-user-' + this.userId_
-    });
+    return elt('div', [ colorDiv, nameDiv ], { 'class': 'wildpad-userlist-user' });
   };
 
   WildpadUserList.prototype.makeUserEntriesForOthers_ = function() {
@@ -110,7 +102,7 @@ var WildpadUserList = (function() {
       name = name.substring(0, 20);
 
       var color = userSnapshot.child('color').val();
-      if (!isValidColor(color)) {
+      if (typeof color !== 'string' || !color.match(/^#[a-fA-F0-9]{3,6}$/)) {
         color = "#ffb"
       }
 
@@ -119,9 +111,7 @@ var WildpadUserList = (function() {
 
       var nameDiv = elt('div', name || 'Guest', { 'class': 'wildpad-userlist-name' });
 
-      var userDiv = elt('div', [ colorDiv, nameDiv ], {
-        'class': 'wildpad-userlist-user ' + 'wildpad-user-' + userId
-      });
+      var userDiv = elt('div', [ colorDiv, nameDiv ], { 'class': 'wildpad-userlist-user' });
       userId2Element[userId] = userDiv;
 
       if (userId === self.userId_) {
@@ -173,13 +163,6 @@ var WildpadUserList = (function() {
     }
     this.wilddogCallbacks_ = [];
   };
-
-  /** Assorted helpers */
-
-  function isValidColor(color) {
-    return typeof color === 'string' &&
-      (color.match(/^#[a-fA-F0-9]{3,6}$/) || color == 'transparent');
-  }
 
 
   /** DOM helpers */
