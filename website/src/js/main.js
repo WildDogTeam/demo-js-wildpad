@@ -16,8 +16,8 @@
       room = OFFSET + Math.floor(Math.random() * ROOMS);
     }
 
-    var firebaseUrl = 'https://myoffice1.wilddogio.com/home/' + room;
-    var wildpadRef = new Wilddog(firebaseUrl);
+    var wilddogUrl = 'https://myoffice1.wilddogio.com/home/' + room;
+    var wildpadRef = new Wilddog(wilddogUrl);
 
     codeMirror = CodeMirror(document.getElementById('wildpad'), { lineWrapping: true });
     var userId = wildpadRef.push().key(); // Just a random ID.
