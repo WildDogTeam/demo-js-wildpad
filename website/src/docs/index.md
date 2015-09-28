@@ -267,7 +267,7 @@ Wildpad按照以下的数据结构在指定的Wilddog位置存储你的数据:
     * `<revision id>/`
         * `a` - 文档版本修订的用户Id.
         * `o/` - 文档版本修订的一系列操作.可以参考 
-          [text-operation.js](https://github.com/WildDogTeam/lib-js-wildpad/blob/master/lib/text-operation.js) 了解更多的细节.
+          [text-operation.js](https://github.com/WildDogTeam/demo-js-wildpad/blob/master/lib/text-operation.js) 了解更多的细节.
 * `checkpoint/`
     * `a` - 　创建检查点的用户Id.
     * `rev` - 修订时检查点.
