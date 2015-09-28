@@ -225,31 +225,7 @@ wildpad.on('synced', function(isSynced) {
 <a name="headless"> </a>
 
 # 3. Headless模式
-
-Wildpad同时提供Headless模式，它既可以运行在Nodejs或浏览器中，在这个例子中，可以安装`wildpad` npm module:
-
-`npm install wildpad`
-
-{% highlight javascript %}
-var Wildpad = require('wildpad')
-var headless = new Wildpad.Headless('<WILDPAD_URL>')
-{% endhighlight %}
-
-Alternatively, you can load Headless Wildpad with a Wilddog ref you create on your own. This is useful if you need to use `.push()` to create a ref or if you need to do any custom authentication.
-
-在NodeJS中，你需要安装`npm install wilddog`，然后在代码中引用。
-
-{% highlight javascript %}
-var Wildpad  = require('wildpad')
-var Wilddog = require('wilddog')
-
-var ref      = new Wilddog('<WILDPAD_ROOT_URL>').push()
-var headless = new Wildpad.Headless(ref)
-{% endhighlight %}
-
-## Headless Methods
-
-Headless模式支持一些普通wildpad类似的方法,增加了回调函数参数。
+Headless模式支持一些普通的wildpad方法并增加了回调函数参数。
 
 `headless.getText(callback)` 和 `headless.getHtml(callback)`
 {% highlight javascript %}
@@ -289,13 +265,13 @@ Wildpad按照以下的数据结构在指定的Wilddog位置存储你的数据:
         * `color` -  cursor的颜色.
 * `history/` - 修订文档的序列.
     * `<revision id>/`
-        * `a` - 版本修订的用户Id userid of the user that made the revision.
-        * `o/` - 版本修订的一系列操作 array of operations that make up the revision.  See
-          [text-operation.js](https://github.com/wilddog/wildpad/blob/master/lib/text-operation.js) for details.
+        * `a` - 文档版本修订的用户Id.
+        * `o/` - 文档版本修订的一系列操作.可以参考 
+          [text-operation.js](https://github.com/WildDogTeam/lib-js-wildpad/blob/master/lib/text-operation.js) 了解更多的细节.
 * `checkpoint/`
-    * `a` - 创建检查点的用户Id.
-    * `rev` - revision at the time the checkpoint was taken.
-    * `op/` - array of operations that made up the document at that revision.
+    * `a` - 　创建检查点的用户Id.
+    * `rev` - 修订时检查点.
+    * `op/` - 文档修订的一系列操作.
 
 ## 安全
 为了保护Wilddog数据，你可以参考野狗关于[安全](https://z.wilddog.com/)的相关特性.

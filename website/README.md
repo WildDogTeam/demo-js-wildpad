@@ -1,20 +1,16 @@
 # Wildpad website.
 
-To generate the docs, you'll need jekyll and some other gems, which you can install via bundler:
+为了生成文档，你需要通过bundler安装jekyll和其它gems:
 
     gem install bundler
     bundle install
 
-Then you can run: 
+接着: 
 
     jekyll serve --watch
 
-And browse the site at http://localhost:4000/
+你可以访问http://localhost:4000/预览
 
-To deploy to Wilddog Hosting, run:
-
+发布生成html文件，可以运行
     ./deploy.sh
 
-NOTE: Although this is a gh-pages branch, it's no longer compatible with 
-Github Pages since the root of the jekyll files is src/ (although we override 
-the source root in _config.yml, github does not respect it.)
