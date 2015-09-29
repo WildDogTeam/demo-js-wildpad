@@ -1,0 +1,47 @@
+{
+  "name": "wildpad",
+  "description": "Wilddog 开源代码协作和文本编辑",
+  "version": "0.1.0",
+  "authors": [
+    "wilddog <support@wilddog.com> (https://www.wilddog.com/)"
+  ],
+  "homepage": "http://wildpad.wilddogapp.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WildDogTeam/demo-js-wildpad.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "text",
+    "word",
+    "editor",
+    "wilddog",
+    "realtime",
+    "collaborative"
+  ],
+  "main": [
+    "dist/wildpad.min.js",
+    "dist/wildpad.css",
+    "dist/wildpad.eot"
+  ],
+  "ignore": [
+    "**/.*",
+    "lib",
+    "font",
+    "test",
+    "examples",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "package.json",
+    "changelog.txt"
+  ],
+  "dependencies": {
+    "jsdom": "3.x",
+    "wilddog": "0.4.5"
+  },
+  "devDependencies": {
+    "jasmine-core": "2.3.4",
+    "codemirror": "5.x.x"
+  }
+}
