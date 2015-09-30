@@ -65,13 +65,10 @@ grunt
 
 你也可以通过npm 或者 bowr安装Wildchat, 他们会自动下载依赖。
 
-```bash
-$ npm install wildpad --save
-```
 
 ```bash
 $ bower install wildpad --save
-
+```
 * `dist/` - grunt文件合并路径 (`wildpad.js`, `wildpad.min.js`, `wildpad.css`, `wildpad.eot`).
 * `examples/` - 一些嵌入Wildpad的例子.
 * `font/` - 工具栏的图标和字体.
@@ -95,6 +92,7 @@ cd website/
 jekyll build
 ```
 
+本地运行
 ```
 jekyll serve --watch
 ```
