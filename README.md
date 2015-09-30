@@ -1,5 +1,5 @@
-# Wildpad
-[Wildpad](http://wildpad.wilddogapp.com/)是一个开源的协同文本编辑器，它可以嵌入到较大的应用中
+## demo-js-wildpad
+[Wildpad](http://wildpad.wilddogapp.com/)是一个开源的协同文本编辑器，它可以嵌入到较大的应用中.
 
 ## 实例
 
@@ -36,6 +36,27 @@ js文件，就可以把它嵌入到你的应用中。
 野狗支持使用 [CodeMirror](http://codemirror.net/)和[ACE](http://ace.c9.io/)作为基础编辑器，可以参考
 [wildpad文档](http://wildpad.wilddogapp.com/docs)。
 
+## 本地运行
+
+首先确认本机已经安装 [Node.js](http://nodejs.org/) 运行环境，然后执行下列指令：
+
+```
+git clone git@github.com:WildDogTeam/demo-js-wildpad.git
+cd  demo-js-wildpad
+```
+
+安装依赖：
+
+```
+npm install
+```
+
+启动项目：
+
+```
+grunt
+```
+
 ### 内容
 
 * `dist/` - grunt文件合并路径 (`wildpad.js`, `wildpad.min.js`, `wildpad.css`, `wildpad.eot`).
@@ -52,4 +73,35 @@ js文件，就可以把它嵌入到你的应用中。
 
 Wildpad使用野狗数据库，你可以从这里
 [注册](https://www.wilddog.com/my-account/signup)一个免费体验账号。
+
+
+## 支持
+如果在使用过程中有任何问题，请提 [issue](https://github.com/WildDogTeam/demo-js-wildpad/issues) ，我会在 Github 上给予帮助。
+
+## 相关文档
+
+* [Wilddog 概览](https://z.wilddog.com/overview/guide)
+* [JavaScript SDK快速入门](https://z.wilddog.com/web/quickstart)
+* [JavaScript SDK 开发向导](https://z.wilddog.com/web/guide/1)
+* [JavaScript SDK API](https://z.wilddog.com/web/api)
+* [下载页面](https://www.wilddog.com/download/)
+* [Wilddog FAQ](https://z.wilddog.com/faq/qa)
+
+
+## License
+MIT
+http://wilddog.mit-license.org/
+
+## 感谢 Thanks
+
+We would like to thank the following projects for helping us achieve our goals:
+
+Open Source:
+
+* [firepad](https://github.com/firebase/firepad) Firepad is an open-source, collaborative code and text editor. It is designed to be embedded inside larger web applications.
+* [Jquery](jquery.com) The Write Less, Do More, JavaScript Library
+* [codemirror](https://codemirror.net/)
+* [ace](http://ace.c9.io/)
+
+
 
