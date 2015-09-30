@@ -99,7 +99,7 @@ We would like to thank the following projects for helping us achieve our goals:
 Open Source:
 
 * [firepad](https://github.com/firebase/firepad) Firepad is an open-source, collaborative code and text editor. It is designed to be embedded inside larger web applications.
-* [Jquery](jquery.com) The Write Less, Do More, JavaScript Library
+* [jquery](http://jquery.com/) The Write Less, Do More, JavaScript Library
 * [codemirror](https://codemirror.net/)
 * [ace](http://ace.c9.io/)
 
