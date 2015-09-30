@@ -119,7 +119,8 @@ Wildpad使用野狗数据库，你可以从这里
 * [JavaScript SDK API](https://z.wilddog.com/web/api)
 * [下载页面](https://www.wilddog.com/download/)
 * [Wilddog FAQ](https://z.wilddog.com/faq/qa)
-
+* [jekyll 中文](http://jekyll.bootcss.com/docs/home/) 开源软件，功能是将纯文本转化为静态网站和博客
+* [jekyll 中文安装文档](http://jekyll.bootcss.com/docs/installation/)
 
 ## License
 MIT
@@ -133,8 +134,8 @@ Open Source:
 
 * [firepad](https://github.com/firebase/firepad) Firepad is an open-source, collaborative code and text editor. It is designed to be embedded inside larger web applications.
 * [jquery](http://jquery.com/) The Write Less, Do More, JavaScript Library
-* [codemirror](https://codemirror.net/)
-* [ace](http://ace.c9.io/)
+* [codemirror](https://codemirror.net/)　CodeMirror is a versatile text editor implemented in JavaScript for the browser.
+* [ace](http://ace.c9.io/) Ace is an embeddable code editor written in JavaScript.
 
 
 
