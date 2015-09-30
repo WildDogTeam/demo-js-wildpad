@@ -1,13 +1,17 @@
 ## demo-js-wildpad
 [Wildpad](http://wildpad.wilddogapp.com/)是一个开源的协同文本编辑器，它可以嵌入到较大的应用中.
 
-## 实例
+## 在线示例
 
 可以参考[wilddog demo](http://wildpad.wilddogapp.com/demo) 
 
 [![一个demo页面的快照](screenshot.png)](http://wildpad.wilddogapp.com/demo/)
 
-## 步骤
+## 在线文档
+
+[Wildpad在线文档](http://wildpad.wilddogapp.com/docs/)
+
+## 下载
 Wildpad 使用 [Wilddog](https://www.wilddog.com)提供后端服务，因此它不需要后端的支持，只需要引入少量的
 js文件，就可以把它嵌入到你的应用中。
 
@@ -24,6 +28,7 @@ js文件，就可以把它嵌入到你的应用中。
 <script src="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.js"></script>
 ```
 
+## 示例代码
 ```HTML
 <div id="wildpad"></div>
 <script>
@@ -46,9 +51,10 @@ cd  demo-js-wildpad
 ```
 
 安装依赖：
-
 ```
+npm install bower -g
 npm install
+bower install
 ```
 
 启动项目：
@@ -57,7 +63,14 @@ npm install
 grunt
 ```
 
-### 内容
+你也可以通过npm 或者 bowr安装Wildchat, 他们会自动下载依赖。
+
+```bash
+$ npm install wildpad --save
+```
+
+```bash
+$ bower install wildpad --save
 
 * `dist/` - grunt文件合并路径 (`wildpad.js`, `wildpad.min.js`, `wildpad.css`, `wildpad.eot`).
 * `examples/` - 一些嵌入Wildpad的例子.
@@ -68,6 +81,28 @@ grunt
     * `annotation-list.js`
     * `rich-text-codemirror.js`
     * `wilddog-adapter.js` 
+
+## 生成本地文档
+**本地文档是用jekyll构建的，jekyll需要ruby环境的运行环境。如果没有ruby环境，可以查看上面的在线文档。**
+
+```
+cd website/
+```
+
+生成web部署文件：
+
+```
+jekyll build
+```
+
+```
+jekyll serve --watch
+```
+
+你可以访问http://localhost:4000/预览
+
+发布生成html文件，可以运行
+    ./deploy.sh
 
 ## 入门
 

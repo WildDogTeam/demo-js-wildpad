@@ -16,8 +16,17 @@
       room = OFFSET + Math.floor(Math.random() * ROOMS);
     }
 
-    var wilddogUrl = 'https://myoffice1.wilddogio.com/home/' + room;
+    var wilddogUrl = 'https://wildpad.wilddogio.com/home/' + room;
     var wildpadRef = new Wilddog(wilddogUrl);
+    
+    var clearDataUrl = new Wilddog(wilddogUrl+"/history");
+    clearDataUrl.once('value', function(snapshot) {           
+            }, function(err) {
+                  if (err.toString().indexOf('too_big') >= 0) {
+                      clearDataUrl.remove();
+                      alert(" demo演示数据过大，已清空，请刷新后再体验 ~")
+                  }
+      });
 
     codeMirror = CodeMirror(document.getElementById('wildpad'), { lineWrapping: true });
     var userId = wildpadRef.push().key(); // Just a random ID.
