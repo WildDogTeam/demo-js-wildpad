@@ -10,7 +10,7 @@ function joinWildpadForHash() {
 
   var id = window.location.hash.replace(/#(.*)#(.*)/g,'$1').replace(/#/g, '') || randomString(10);
   var url = window.location.toString().replace(/#.*/, '') + '#' + id;
-  var wildpadRef = new Wilddog('https://myoffice.wilddogio.com/').child(id);
+  var wildpadRef = new Wilddog('https://wildpad.wilddogio.com/').child(id);
   window.location = url
   var userId = wildpadRef.push().key(); // Just a random ID.
   codeMirror = CodeMirror(document.getElementById('wildpad'), { lineWrapping: true });

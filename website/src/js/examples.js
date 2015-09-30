@@ -111,7 +111,7 @@ var examples = {
 
 var currentId;
 $(window).on('ready', function() {
-  var ref = new Wilddog('https://myoffice.wilddogio.com/');
+  var ref = new Wilddog('https://wildpad.wilddogio.com/');
   for(var example in examples) {
     addClickHandler(example);
   }
@@ -145,7 +145,7 @@ function getExampleAndIdFromUrl() {
 
 var initialized = false;
 function initializeExamples(id) {
-  var ref = new Wilddog('https://myoffice.wilddogio.com/').child(id);
+  var ref = new Wilddog('https://wildpad.wilddogio.com/').child(id);
   for(var example in examples) {
     var $div = $('#' + example + ' .example-container');
     if (initialized) {
