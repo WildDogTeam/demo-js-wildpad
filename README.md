@@ -1,4 +1,4 @@
-## demo-js-wildpad
+# demo-js-wildpad
 [Wildpad](http://wildpad.wilddogapp.com/)是一个开源的协同文本编辑器，它可以嵌入到较大的应用中.
 
 ## 在线示例
@@ -116,9 +116,9 @@ Wildpad使用野狗数据库，你可以从这里
 
 ## 相关文档
 
-* [Wilddog 概览](https://z.wilddog.com/overview/guide)
+* [Wilddog 概览](https://z.wilddog.com/overview/introduction)
 * [JavaScript SDK快速入门](https://z.wilddog.com/web/quickstart)
-* [JavaScript SDK 开发向导](https://z.wilddog.com/web/guide/1)
+* [JavaScript SDK 开发向导](https://z.wilddog.com/web/quickstart)
 * [JavaScript SDK API](https://z.wilddog.com/web/api)
 * [下载页面](https://www.wilddog.com/download/)
 * [Wilddog FAQ](https://z.wilddog.com/faq/qa)
