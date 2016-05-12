@@ -28,8 +28,8 @@ Wildpad是基于CodeMirror编辑器开发的,当然如果你更喜欢ACE,可以�
 <script src='https://cdn.wilddog.com/js/client/current/wilddog.js'></script>
 
 <!-- CodeMirror -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+<script src="https://dl.wdstatic.cn/cloudflare/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+<link rel="stylesheet" href="https://dl.wdstatic.cn/cloudflare/ajax/libs/codemirror/5.2.0/codemirror.css" />
 
 <!-- Wildpad -->
 <link rel="stylesheet" href="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.css" />
@@ -98,7 +98,7 @@ Wildpad是基于CodeMirror编辑器开发的,当然如果你更喜欢ACE,可以�
 <script src="https://cdn.wilddog.com/js/client/current/wilddog.js"></script>
 
 <!-- ACE -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+<script src="https://dl.wdstatic.cn/cloudflare/ajax/libs/ace/1.1.3/ace.js"></script>
 
 <!-- Wildpad -->
 <link rel="stylesheet" href="https://cdn.wilddog.com/app/wildpad/0.1/wildpad.css" />
